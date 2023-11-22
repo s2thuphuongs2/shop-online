@@ -12,16 +12,7 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "laptop")
 public class LaptopEntity extends Product {
-	private String name;
-	private String shortDescription;
-	@Column(columnDefinition = "text")
-	private String fullDescription;
-	private String brand;
-	private String color;
 	private Integer ram;
 	private Integer diskGB;
 	private String diskType;
-	private Double size;
-	private BigDecimal price;
-
 }

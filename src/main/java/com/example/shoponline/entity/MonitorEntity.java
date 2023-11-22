@@ -13,13 +13,5 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "monitor")
 public class MonitorEntity extends Product {
-	private String name;
-	private String shortDescription;
-	@Column(columnDefinition = "text")
-	private String fullDescription;
-	private String brand;
-	private String color;
 	private String resolution;
-	private Double size;
-	private BigDecimal price;
 }
