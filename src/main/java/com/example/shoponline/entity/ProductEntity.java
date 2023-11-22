@@ -9,8 +9,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @Entity
-@Table(name = "mobile")
-public class MobileEntity extends ProductEntity {
-	private Integer ram;
-	private Integer diskGB;
+@Table(name = "product")  // Tên bảng trong cơ sở dữ liệu
+public class ProductEntity extends Product {
+
 }

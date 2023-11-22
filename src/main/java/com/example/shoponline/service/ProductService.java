@@ -1,6 +1,7 @@
 package com.example.shoponline.service;
 
 import com.example.shoponline.entity.Product;
+import com.example.shoponline.entity.ProductEntity;
 
 import java.util.List;
 
@@ -15,7 +16,13 @@ public interface ProductService {
 	 * @return the products
 	 */
 	List<? extends Product> getProducts(String type);
-	List<? extends Product> getProductByName(String name);
+	/**
+	 * Gets products by name.
+	 *
+	 * @param name the name of products
+	 * @return the products
+	 */
+	List<? extends Product> getProductsByName(String name);
 
 	/**
 	 * Insert product boolean.
@@ -25,5 +32,6 @@ public interface ProductService {
 	 * @return the boolean
 	 */
 	Boolean insertProduct(Object object, String type);
+	// TODO: tim san pham theo ten
 
 }

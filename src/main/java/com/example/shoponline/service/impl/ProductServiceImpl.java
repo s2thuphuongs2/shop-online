@@ -1,21 +1,32 @@
 package com.example.shoponline.service.impl;
 
 import com.example.shoponline.customenum.Category;
-import com.example.shoponline.entity.LaptopEntity;
 import com.example.shoponline.entity.Product;
-import com.example.shoponline.repository.LaptopRepository;
+import com.example.shoponline.entity.ProductEntity;
+import com.example.shoponline.repository.ProductRepository;
 import com.example.shoponline.service.ProductService;
 import com.example.shoponline.util.ProductFactory;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 	private final ProductFactory productFactory;
+	@Autowired
+	private ProductRepository productRepository;
+	@Autowired
+	private EntityManager entityManager;
 
 	@Override
 	public List<? extends Product> getProducts(String type) {
@@ -24,18 +35,18 @@ public class ProductServiceImpl implements ProductService {
 		return repository.findAll();
 	}
 
-	@Override
-	public List<? extends Product> getProductByName(String name) {
-		// TODO: tim laptop bang ten
-		// Assuming you have a method named findByName in your repository
-//		List<? extends Product> products = LaptopRepository.findByName(name);
-//		return products;
-		return null;
-	}
+//	@Override
+//	public List<? extends Product> getProductsByName(String name) {
+//		// TODO: tim laptop bang ten
+//		// Assuming you have a method named findByName in your repository
+////		List<? extends Product> products = LaptopRepository.findByName(name);
+////		return products;
+//		return null;
+//	}
 
 
 
-//	@SuppressWarnings("unchecked")
+	//	@SuppressWarnings("unchecked")
 	@Override
 	public Boolean insertProduct(Object object, String type) {
 		Category category = Category.valueOf(type);
@@ -45,4 +56,21 @@ public class ProductServiceImpl implements ProductService {
 		return true;
 	}
 
+//	public List<Product> getProductsByName(String name) {
+//		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+//		CriteriaQuery<Product> criteriaQuery = criteriaBuilder.createQuery(Product.class);
+//		Root<Product> root = criteriaQuery.from(Product.class);
+//
+//		List<Predicate> predicates = new ArrayList<>();
+//		predicates.add(criteriaBuilder.like(criteriaBuilder.lower(root.get("name")), "%" + name.toLowerCase() + "%"));
+//
+//		criteriaQuery.where(predicates.toArray(new Predicate[0]));
+//
+//		return entityManager.createQuery(criteriaQuery).getResultList();
+//	}
+
+	@Override
+	public List<? extends Product> getProductsByName(String name) {
+		return productRepository.findByName(name);
+	}
 }

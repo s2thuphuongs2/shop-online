@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Table(name = "laptop")
-public class LaptopEntity extends Product {
+public class LaptopEntity extends ProductEntity {
 	private Integer ram;
 	private Integer diskGB;
 	private String diskType;

@@ -1,13 +1,11 @@
 package com.example.shoponline.util;
 
 import com.example.shoponline.customenum.Category;
-import com.example.shoponline.entity.LaptopEntity;
-import com.example.shoponline.entity.MobileEntity;
-import com.example.shoponline.entity.MonitorEntity;
-import com.example.shoponline.entity.Product;
+import com.example.shoponline.entity.*;
 import com.example.shoponline.repository.LaptopRepository;
 import com.example.shoponline.repository.MobileRepository;
 import com.example.shoponline.repository.MonitorRepository;
+import com.example.shoponline.repository.ProductRepository;
 import com.example.shoponline.service.CRUDService;
 import com.example.shoponline.service.LaptopService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -21,6 +19,7 @@ public class ProductFactory {
 	private final LaptopRepository laptopRepository;
 	private final MobileRepository mobileRepository;
 	private final MonitorRepository monitorRepository;
+	private final ProductRepository productRepository;
 	private final LaptopService laptopService;
 	private final ObjectMapper objectMapper;
 
@@ -39,8 +38,9 @@ public class ProductFactory {
 
 			}
 			default: {
-				// todo: them Repository
-				return null;
+				// todo: add Repository
+				return productRepository;
+//				return null;
 			}
 		}
 	}
@@ -57,7 +57,8 @@ public class ProductFactory {
 				return MonitorEntity.class;
 			}
 			default: {
-				return null;
+				return ProductEntity.class;
+//				return null;
 			}
 		}
 	}
@@ -74,7 +75,8 @@ public class ProductFactory {
 				return objectMapper.convertValue(object, MonitorEntity.class);
 			}
 			default: {
-				return null;
+//				return null;
+				return objectMapper.convertValue(object, ProductEntity.class);
 			}
 		}
 	}

@@ -12,6 +12,6 @@ import java.math.BigDecimal;
 @Setter
 @Entity
 @Table(name = "monitor")
-public class MonitorEntity extends Product {
+public class MonitorEntity extends ProductEntity {
 	private String resolution;
 }

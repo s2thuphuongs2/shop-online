@@ -3,15 +3,13 @@ package com.example.shoponline.controller;
 
 import com.example.shoponline.dto.api.ResponseDto;
 import com.example.shoponline.entity.Product;
+import com.example.shoponline.entity.ProductEntity;
 import com.example.shoponline.service.CartService;
 import com.example.shoponline.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -37,13 +35,16 @@ public class ProductController {
 //	public ResponseDto<List<? extends Product>> getProductsByName(@PathVariable String name) {
 //		return ResponseDto.ok(productService.getProducts(name));
 //	}
-
+//	@PreAuthorize("isAnonymous()")
 	@GetMapping("/get-cart")
+	@PreAuthorize("permitAll()")
 	public ResponseDto<?> viewProductInCart() {
 		return ResponseDto.ok(cartService.viewProductInCart());
 	}
 
 	@PostMapping("/add-to-cart/{id}")
+	@PreAuthorize("permitAll()")
+//	@PreAuthorize("hasRole('USER')")
 	public ResponseDto<?> addProductToCart(@PathVariable String id) {
 		return ResponseDto.ok(cartService.addProductToCart(id));
 	}
@@ -53,4 +54,9 @@ public class ProductController {
 		return ResponseDto.ok(cartService.removeProductFromCart(id));
 	}
 
+	@GetMapping("/search")
+	public ResponseEntity<List<? extends Product>> searchProductsByName(@RequestParam String name) {
+		List<? extends Product> products = productService.getProductsByName(name);
+		return ResponseEntity.ok(products);
+	}
 }
