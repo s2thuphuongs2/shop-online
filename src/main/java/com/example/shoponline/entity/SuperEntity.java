@@ -2,6 +2,7 @@ package com.example.shoponline.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -20,17 +21,17 @@ public class SuperEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false)
 	private Long id;
-
+	@CreationTimestamp //Tụ động thêm thời gian tạo database
 	@Column(name = "created_date")
 	private LocalDateTime createdDate;
 
 	@Column(name = "updated_date")
 	private LocalDateTime updatedDate;
 
-	@PrePersist
-	public void preCreate() {
-		createdDate = LocalDateTime.now();
-	}
+//	@PrePersist
+//	public void preCreate() {
+//		createdDate = LocalDateTime.now();
+//	}
 
 	@PreUpdate
 	public void preUpdate() {

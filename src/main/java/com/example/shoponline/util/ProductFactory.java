@@ -1,6 +1,7 @@
 package com.example.shoponline.util;
 
 import com.example.shoponline.customenum.Category;
+import com.example.shoponline.customenum.PriceRange;
 import com.example.shoponline.entity.*;
 import com.example.shoponline.repository.LaptopRepository;
 import com.example.shoponline.repository.MobileRepository;
@@ -12,6 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
 
 @Component
 @RequiredArgsConstructor
@@ -89,6 +92,19 @@ public class ProductFactory {
 			default: {
 				return null;
 			}
+		}
+	}
+
+	//TODO: thêm getPriceRange
+	public PriceRange getPriceRange(BigDecimal price) {
+		if (price.compareTo(BigDecimal.valueOf(1)) >= 0 && price.compareTo(BigDecimal.valueOf(100)) <= 0) {
+			return PriceRange.LOW;
+		} else if (price.compareTo(BigDecimal.valueOf(101)) >= 0 && price.compareTo(BigDecimal.valueOf(500)) <= 0) {
+			return PriceRange.MEDIUM;
+		} else if (price.compareTo(BigDecimal.valueOf(501)) >= 0 && price.compareTo(BigDecimal.valueOf(900)) <= 0) {
+			return PriceRange.HIGH;
+		} else {
+			return PriceRange.VERY_HIGH;
 		}
 	}
 

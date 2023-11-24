@@ -1,6 +1,7 @@
 package com.example.shoponline.service.impl;
 
 import com.example.shoponline.customenum.Category;
+import com.example.shoponline.customenum.PriceRange;
 import com.example.shoponline.entity.Product;
 import com.example.shoponline.entity.ProductEntity;
 import com.example.shoponline.repository.ProductRepository;
@@ -90,5 +91,16 @@ public class ProductServiceImpl implements ProductService {
 	public List<? extends Product> getProductsByColor(String color) {
 		return productRepository.findByColor(color);
 	}
+
+	@Override
+//	public List<? extends Product> getProductsByPriceRange(String priceRange) {
+	public List<? extends Product> getProductsByPriceRange(BigDecimal price) {
+//		PriceRange price = PriceRange.valueOf(priceRange);
+		PriceRange priceRange= productFactory.getPriceRange(price);
+		return productRepository.findByPriceRange(priceRange);
+	}
+
+
+
 
 }

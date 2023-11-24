@@ -11,5 +11,4 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "product")  // Tên bảng trong cơ sở dữ liệu
 public class ProductEntity extends Product {
-
 }

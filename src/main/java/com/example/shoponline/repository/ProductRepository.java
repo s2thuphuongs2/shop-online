@@ -1,5 +1,6 @@
 package com.example.shoponline.repository;
 
+import com.example.shoponline.customenum.PriceRange;
 import com.example.shoponline.entity.Product;
 import com.example.shoponline.entity.ProductEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,4 +15,5 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
     List<? extends Product> findByPrice(BigDecimal price);
     List<? extends Product> findByBrand(String brand);
     List<? extends Product> findByColor(String color);
+    List<? extends Product> findByPriceRange(PriceRange priceRange);
 }

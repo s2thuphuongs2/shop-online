@@ -1,5 +1,6 @@
 package com.example.shoponline.service;
 
+import com.example.shoponline.customenum.PriceRange;
 import com.example.shoponline.entity.Product;
 import com.example.shoponline.entity.ProductEntity;
 
@@ -29,7 +30,7 @@ public interface ProductService {
 	List<? extends Product> getProductsByPrice(BigDecimal price);
 	List<? extends Product> getProductsByBrand(String brand);
 	List<? extends Product> getProductsByColor(String color);
-
+	List<? extends Product> getProductsByPriceRange(BigDecimal price);
 	/**
 	 * Insert product boolean.
 	 *
@@ -38,5 +39,7 @@ public interface ProductService {
 	 * @return the boolean
 	 */
 	Boolean insertProduct(Object object, String type);
+
+
 
 }

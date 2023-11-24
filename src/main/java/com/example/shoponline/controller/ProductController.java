@@ -1,6 +1,7 @@
 package com.example.shoponline.controller;
 
 
+import com.example.shoponline.customenum.PriceRange;
 import com.example.shoponline.dto.api.ResponseDto;
 import com.example.shoponline.entity.Product;
 import com.example.shoponline.entity.ProductEntity;
@@ -50,27 +51,32 @@ public class ProductController {
 	}
 	//DONE: Tim san pham = ten
 	@GetMapping("/search")
-	public ResponseEntity<List<? extends Product>> searchProductsByName(@RequestParam String name) {
+	public ResponseDto<List<? extends Product>> searchProductsByName(@RequestParam String name) {
 		List<? extends Product> products = productService.getProductsByName(name);
-		return ResponseEntity.ok(products);
+		return ResponseDto.ok(products);
 	}
 	//TODO: tim san pham bang price, brand, color
 	@GetMapping("/search-by-price")
-	public ResponseEntity<List<? extends Product>> searchProductsByPrice(@RequestParam BigDecimal price) {
+	public ResponseDto<List<? extends Product>> searchProductsByPrice(@RequestParam BigDecimal price) {
 		List<? extends Product> products = productService.getProductsByPrice(price);
-		return ResponseEntity.ok(products);
+		return ResponseDto.ok(products);
 	}
 
 	@GetMapping("/search-by-brand")
-	public ResponseEntity<List<? extends Product>> searchProductsByBrand(@RequestParam String brand) {
+	public ResponseDto<List<? extends Product>> searchProductsByBrand(@RequestParam String brand) {
 		List<? extends Product> products = productService.getProductsByBrand(brand);
-		return ResponseEntity.ok(products);
+		return ResponseDto.ok(products);
 	}
 
 	@GetMapping("/search-by-color")
-	public ResponseEntity<List<? extends Product>> searchProductsByColor(@RequestParam String color) {
+	public ResponseDto<List<? extends Product>> searchProductsByColor(@RequestParam String color) {
 		List<? extends Product> products = productService.getProductsByColor(color);
-		return ResponseEntity.ok(products);
+		return ResponseDto.ok(products);
+	}
+	@GetMapping("/search-by-price-range")
+	public ResponseDto<List<? extends Product>> searchProductsByPriceRange(@RequestParam BigDecimal price) {
+		List<? extends Product> products = productService.getProductsByPriceRange(price);
+		return ResponseDto.ok(products);
 	}
 
 }
