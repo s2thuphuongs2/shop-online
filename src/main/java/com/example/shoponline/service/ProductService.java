@@ -25,7 +25,7 @@ public interface ProductService {
 	 * @return the products
 	 */
 	// DONE: tim san pham theo ten
-	// TODO: tim san pham theo price, brand, color
+	// DONE: tim san pham theo price, brand, color
 	List<? extends Product> getProductsByName(String name);
 	List<? extends Product> getProductsByPrice(BigDecimal price);
 	List<? extends Product> getProductsByBrand(String brand);

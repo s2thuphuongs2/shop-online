@@ -28,7 +28,7 @@ public abstract class Product extends SuperEntity {
         if (getPrice() != null) {
             // Tùy thuộc vào yêu cầu, bạn có thể thiết lập giá trị PriceRange dựa trên giá của sản phẩm
             // Ví dụ: Nếu giá nhỏ hơn 100, thiết lập là LOW; nếu giá lớn hơn 900, thiết lập là HIGH, ngược lại là MEDIUM
-            //TODO: Đổi sang hằng số
+            //  TODO: Đổi sang hằng số
             if (getPrice().compareTo(BigDecimal.valueOf(100)) < 0) {
                 this.priceRange = PriceRange.LOW;
             } else if (price.compareTo(BigDecimal.valueOf(101)) >= 0 && price.compareTo(BigDecimal.valueOf(500)) <= 0) {

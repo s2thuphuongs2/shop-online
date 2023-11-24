@@ -39,7 +39,6 @@ public class ProductServiceImpl implements ProductService {
 
 //	@Override
 //	public List<? extends Product> getProductsByName(String name) {
-//		// TODO: tim laptop bang ten
 //		// Assuming you have a method named findByName in your repository
 ////		List<? extends Product> products = LaptopRepository.findByName(name);
 ////		return products;
@@ -71,7 +70,7 @@ public class ProductServiceImpl implements ProductService {
 //		return entityManager.createQuery(criteriaQuery).getResultList();
 //	}
 
-	//TODO: search by price, brand, color
+	//done: search by price, brand, color
 	@Override
 	public List<? extends Product> getProductsByName(String name) {
 		return productRepository.findByName(name);

@@ -5,9 +5,6 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
-/**
- * @author mangvientrieu
- */
 @Getter
 @Setter
 public class InitOTPOutput implements Serializable {

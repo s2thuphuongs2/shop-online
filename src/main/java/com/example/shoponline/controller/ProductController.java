@@ -22,6 +22,7 @@ public class ProductController {
 	private final ProductService productService;
 	private final CartService cartService;
 
+	// DONE: search products by category
 	@GetMapping("/{type}")
 	public ResponseDto<List<? extends Product>> getProducts(@PathVariable String type) {
 		return ResponseDto.ok(productService.getProducts(type));
@@ -30,35 +31,22 @@ public class ProductController {
 	public ResponseDto<Boolean> insertProduct(@PathVariable String type, @RequestBody Object object) {
 		return ResponseDto.ok(productService.insertProduct(object, type));
 	}
-	//TODO: Tim san pham bang Price
 
-
-	@GetMapping("/get-cart")
-
-	public ResponseDto<?> viewProductInCart() {
-		return ResponseDto.ok(cartService.viewProductInCart());
-	}
-
-	@PostMapping("/add-to-cart/{id}")
-
-	public ResponseDto<?> addProductToCart(@PathVariable String id) {
-		return ResponseDto.ok(cartService.addProductToCart(id));
-	}
-
-	@PostMapping("/remove-from-cart/{id}")
-	public ResponseDto<?> removeProductFromCart(@PathVariable String id) {
-		return ResponseDto.ok(cartService.removeProductFromCart(id));
-	}
-	//DONE: Tim san pham = ten
+	// DONE: search products by name
 	@GetMapping("/search")
 	public ResponseDto<List<? extends Product>> searchProductsByName(@RequestParam String name) {
 		List<? extends Product> products = productService.getProductsByName(name);
 		return ResponseDto.ok(products);
 	}
-	//TODO: tim san pham bang price, brand, color
-	@GetMapping("/search-by-price")
-	public ResponseDto<List<? extends Product>> searchProductsByPrice(@RequestParam BigDecimal price) {
-		List<? extends Product> products = productService.getProductsByPrice(price);
+	//DONE: tim san pham bang price, brand, color
+//	@GetMapping("/search-by-price")
+//	public ResponseDto<List<? extends Product>> searchProductsByPrice(@RequestParam BigDecimal price) {
+//		List<? extends Product> products = productService.getProductsByPrice(price);
+//		return ResponseDto.ok(products);
+//	}
+	@GetMapping("/search-by-price-range")
+	public ResponseDto<List<? extends Product>> searchProductsByPriceRange(@RequestParam BigDecimal price) {
+		List<? extends Product> products = productService.getProductsByPriceRange(price);
 		return ResponseDto.ok(products);
 	}
 
@@ -73,10 +61,27 @@ public class ProductController {
 		List<? extends Product> products = productService.getProductsByColor(color);
 		return ResponseDto.ok(products);
 	}
-	@GetMapping("/search-by-price-range")
-	public ResponseDto<List<? extends Product>> searchProductsByPriceRange(@RequestParam BigDecimal price) {
-		List<? extends Product> products = productService.getProductsByPriceRange(price);
-		return ResponseDto.ok(products);
+
+
+	//DONE: add product to shoping cart
+	@GetMapping("/get-cart")
+
+	public ResponseDto<?> viewProductInCart() {
+		return ResponseDto.ok(cartService.viewProductInCart());
 	}
+
+
+	@PostMapping("/add-to-cart/{id}")
+
+	public ResponseDto<?> addProductToCart(@PathVariable String id) {
+		return ResponseDto.ok(cartService.addProductToCart(id));
+	}
+
+	@PostMapping("/remove-from-cart/{id}")
+	public ResponseDto<?> removeProductFromCart(@PathVariable String id) {
+		return ResponseDto.ok(cartService.removeProductFromCart(id));
+	}
+
+	//TODO: check out the order
 
 }
