@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -30,11 +31,6 @@ public class ProductController {
 	}
 	//TODO: Tim san pham bang Price
 
-	//TODO: Tim laptop = ten
-//	@GetMapping("/{name}")
-//	public ResponseDto<List<? extends Product>> getProductsByName(@PathVariable String name) {
-//		return ResponseDto.ok(productService.getProducts(name));
-//	}
 
 	@GetMapping("/get-cart")
 
@@ -52,10 +48,29 @@ public class ProductController {
 	public ResponseDto<?> removeProductFromCart(@PathVariable String id) {
 		return ResponseDto.ok(cartService.removeProductFromCart(id));
 	}
-
+	//DONE: Tim san pham = ten
 	@GetMapping("/search")
 	public ResponseEntity<List<? extends Product>> searchProductsByName(@RequestParam String name) {
 		List<? extends Product> products = productService.getProductsByName(name);
 		return ResponseEntity.ok(products);
 	}
+	//TODO: tim san pham bang price, brand, color
+	@GetMapping("/search-by-price")
+	public ResponseEntity<List<? extends Product>> searchProductsByPrice(@RequestParam BigDecimal price) {
+		List<? extends Product> products = productService.getProductsByPrice(price);
+		return ResponseEntity.ok(products);
+	}
+
+	@GetMapping("/search-by-brand")
+	public ResponseEntity<List<? extends Product>> searchProductsByBrand(@RequestParam String brand) {
+		List<? extends Product> products = productService.getProductsByBrand(brand);
+		return ResponseEntity.ok(products);
+	}
+
+	@GetMapping("/search-by-color")
+	public ResponseEntity<List<? extends Product>> searchProductsByColor(@RequestParam String color) {
+		List<? extends Product> products = productService.getProductsByColor(color);
+		return ResponseEntity.ok(products);
+	}
+
 }

@@ -3,6 +3,7 @@ package com.example.shoponline.service;
 import com.example.shoponline.entity.Product;
 import com.example.shoponline.entity.ProductEntity;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -23,7 +24,11 @@ public interface ProductService {
 	 * @return the products
 	 */
 	// DONE: tim san pham theo ten
+	// TODO: tim san pham theo price, brand, color
 	List<? extends Product> getProductsByName(String name);
+	List<? extends Product> getProductsByPrice(BigDecimal price);
+	List<? extends Product> getProductsByBrand(String brand);
+	List<? extends Product> getProductsByColor(String color);
 
 	/**
 	 * Insert product boolean.

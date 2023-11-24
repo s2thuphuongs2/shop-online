@@ -16,6 +16,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,9 +70,25 @@ public class ProductServiceImpl implements ProductService {
 //		return entityManager.createQuery(criteriaQuery).getResultList();
 //	}
 
-	//TODO-Map Product voi Laptop, mobile, monitor, ram
+	//TODO: search by price, brand, color
 	@Override
 	public List<? extends Product> getProductsByName(String name) {
 		return productRepository.findByName(name);
 	}
+
+	@Override
+	public List<? extends Product> getProductsByPrice(BigDecimal price) {
+		return productRepository.findByPrice(price);
+	}
+
+	@Override
+	public List<? extends Product> getProductsByBrand(String brand) {
+		return productRepository.findByBrand(brand);
+	}
+
+	@Override
+	public List<? extends Product> getProductsByColor(String color) {
+		return productRepository.findByColor(color);
+	}
+
 }
