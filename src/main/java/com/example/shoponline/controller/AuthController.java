@@ -26,6 +26,7 @@ public class AuthController {
 	public ResponseDto<LoginOutput> login(@RequestBody LoginInput input) {
 		return ResponseDto.ok(authService.login(input));
 	}
+	//note: hello
 
 	@PostMapping("/sign-up")
 	public ResponseDto<SignUpOutput> signUp(@RequestBody SignUpInput input) {

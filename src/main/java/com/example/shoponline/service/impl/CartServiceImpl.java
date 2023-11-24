@@ -19,7 +19,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public Boolean addProductToCart(Object object) {
-		// fixme-done: \"org.springframework.security.core.Authentication.getPrincipal()\"
+		// fix-done: \"org.springframework.security.core.Authentication.getPrincipal()\"
 		// todo: Kiem tra Xac thuc truoc khi them sp vao Gio hang
 		// todo: Thay the Authentication bang PreProduct ben Controller
 //		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -38,7 +38,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public List<Object> viewProductInCart() {
-//		// fixme-done: \"org.springframework.security.core.Authentication.getPrincipal()\"
+//		// fix-done: \"org.springframework.security.core.Authentication.getPrincipal()\"
 //		// todo: Kiem tra Xac thuc truoc khi xem Gio hang
 //		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //		if(authentication != null && authentication.isAuthenticated()){

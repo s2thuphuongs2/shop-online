@@ -35,16 +35,15 @@ public class ProductController {
 //	public ResponseDto<List<? extends Product>> getProductsByName(@PathVariable String name) {
 //		return ResponseDto.ok(productService.getProducts(name));
 //	}
-//	@PreAuthorize("isAnonymous()")
+
 	@GetMapping("/get-cart")
-	@PreAuthorize("permitAll()")
+
 	public ResponseDto<?> viewProductInCart() {
 		return ResponseDto.ok(cartService.viewProductInCart());
 	}
 
 	@PostMapping("/add-to-cart/{id}")
-	@PreAuthorize("permitAll()")
-//	@PreAuthorize("hasRole('USER')")
+
 	public ResponseDto<?> addProductToCart(@PathVariable String id) {
 		return ResponseDto.ok(cartService.addProductToCart(id));
 	}

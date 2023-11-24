@@ -69,6 +69,7 @@ public class ProductServiceImpl implements ProductService {
 //		return entityManager.createQuery(criteriaQuery).getResultList();
 //	}
 
+	//TODO-Map Product voi Laptop, mobile, monitor, ram
 	@Override
 	public List<? extends Product> getProductsByName(String name) {
 		return productRepository.findByName(name);

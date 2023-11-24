@@ -22,6 +22,7 @@ public interface ProductService {
 	 * @param name the name of products
 	 * @return the products
 	 */
+	// DONE: tim san pham theo ten
 	List<? extends Product> getProductsByName(String name);
 
 	/**
@@ -32,6 +33,5 @@ public interface ProductService {
 	 * @return the boolean
 	 */
 	Boolean insertProduct(Object object, String type);
-	// TODO: tim san pham theo ten
 
 }

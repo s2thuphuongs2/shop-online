@@ -65,5 +65,4 @@ public class JWTFilter extends OncePerRequestFilter {
 			response.getWriter().write(objectMapper.writeValueAsString(ResponseDto.fail(null, e)));
 		}
 	}
-
 }

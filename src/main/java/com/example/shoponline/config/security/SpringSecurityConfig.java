@@ -10,9 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-/**
- * @author mangvientrieu
- */
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig {

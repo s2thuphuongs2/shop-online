@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Controller dùng để truy cập và điều chỉnh các thông tin liên quan đến cá nhân
+ * @author PT
  */
 @RestController
 @RequestMapping("/account")
