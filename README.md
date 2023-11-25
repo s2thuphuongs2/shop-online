@@ -122,7 +122,11 @@ Cấu trúc mã nguồn của dự án shop-online theo mô hình Maven và Spri
 
 Lưu ý: Đảm bảo rằng Java Development Kit (JDK) đã được cài đặt trên máy tính.
 
-## Ảnh chụp màn hình Postman
+## IV. ERD
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/cc9091af-4c27-48e4-8152-cc27978a9f9b)
+
+
+## V. Ảnh chụp màn hình Postman
 
 ### 1 - Sign Up
 
