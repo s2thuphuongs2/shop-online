@@ -1,4 +1,4 @@
-![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/1538525a-af88-450a-8df2-aea5f3979f09)# Shop-online
+# Shop-online
 
 ## I. Các n**guyên tắc, mô hình và thực tiễn phát triển phần mềm trong shop-online application:**
 
