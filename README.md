@@ -1,4 +1,4 @@
-# Shop-online
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/1538525a-af88-450a-8df2-aea5f3979f09)# Shop-online
 
 ## I. Các n**guyên tắc, mô hình và thực tiễn phát triển phần mềm trong shop-online application:**
 
@@ -96,12 +96,14 @@ Cấu trúc mã nguồn của dự án shop-online theo mô hình Maven và Spri
         
     - Hoặc chạy trên IDE:
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/e0b3223d-0ab0-4fb2-84cf-5234993ce8f6/Untitled.png)
+        ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/1c14bb07-3e90-453e-800b-a1543cc69bbe)
+
         
 5. **Chạy Ứng dụng:**
     - Chạy ứng dụng từ IDE
         
-        ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/31c9e705-0a60-4155-9c47-b7f92d930d1b/Untitled.png)
+        ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/802712e5-00af-4ddc-9b4f-ad8dfad0d991)
+
         
     - Hoặc sử dụng Maven wrapper:hoặc (đối với Windows)
         
@@ -124,57 +126,65 @@ Lưu ý: Đảm bảo rằng Java Development Kit (JDK) đã được cài đặ
 
 ### 1 - Sign Up
 
-![1-signup.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/d904bcb9-e3e2-45a6-bf33-cef845d459f5/1-signup.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/faa8f1e8-c653-4826-b2e5-428ef0af2a55)
+
 
 ### 2 - Login
 
-![2-login.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/26ccc119-6747-471d-8eba-c5df24f68a7d/2-login.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/39d95475-f1f5-4c8b-9d72-c822e5b0b1ef)
+
 
 ### 3 - Post Product
 
 Post Laptop category:
 
-![3-PostProduct.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/f53b8578-00b0-43de-88d3-1be416c36c81/3-PostProduct.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/92abcf96-647b-40a8-a45d-3b299f1bf7bc)
+
 
 Post Mobile category:
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/99605e77-33fd-4d06-b810-ec22d483ba2b/Untitled.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/46fcaa6d-8de6-4c2a-aff7-dd4596bfba06)
+
 
 ### 4 - Get products
 
 - by Category:
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/222c0584-d5c0-4b3c-98f6-925fca669719/Untitled.png)
+    ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/31fa1571-1bd8-4878-a03c-c428e6e50dda)
+
     
 - by Price (LOW, MEDIUM, HIGH, …)
     
-    ![5-filterByPrice.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/d80e72e7-54d9-4aac-a493-8868bd49c5d1/5-filterByPrice.png)
-    
+    ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/7786fb13-cc4a-4b36-a5bf-6068e6d6240b)
 
 - by Name:
     
-    ![6-getByName.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/be01f4f1-aee1-404f-b711-d5bc3a355655/6-getByName.png)
+    ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/2948746c-6c68-4085-949d-987f7fbe6a35)
+
     
 - by brand:
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/36ab21d3-ad06-4156-ad13-4427747bd907/Untitled.png)
-    
+    ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/6f2d67bb-365c-4427-b644-4bd71233e01f)
 
 ### 5- Post products to Cart:
 
-![7-posttoCart.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/7a83e054-e244-4c93-9eb9-4bbcd318b5c4/7-posttoCart.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/8de1891a-b7c1-4c3d-8782-8dc4a39b5642)
+
 
 ### 6 - Get all products in Cart:
 
-![8-getCart.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/740b1f9b-d3b8-4d53-a7b9-48802cbbd7cd/8-getCart.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/1df6c24c-ddd5-4e2a-82e3-453fbdf8010e)
+
 
 - Remove an product:
     
-    ![9-removeFromCart.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/f0c525d9-7d58-4d25-b54a-dfc48febcc98/9-removeFromCart.png)
+    ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/0fff0782-2dc0-423e-85e6-1ea996166ee2)
+
     
 
 ### 7 - Check out order
 
-![10-checkoutorder.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/f74af19a-f980-4dc9-a4dc-3d7fa7884490/041db5b1-53a6-4df0-9dc3-e3cc915d96b0/10-checkoutorder.png)
+![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/7d530881-9171-4f2e-9509-2dfa6b07e4ac)
+
 
 Cảm ơn vì đã xem, chúc thầy cô một ngày tốt lành!
