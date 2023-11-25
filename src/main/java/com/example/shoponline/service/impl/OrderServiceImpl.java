@@ -4,7 +4,6 @@ import com.example.shoponline.customenum.OrderStatus;
 import com.example.shoponline.dto.order.OrderDTO;
 import com.example.shoponline.entity.OrderEntity;
 import com.example.shoponline.entity.ProductEntity;
-import com.example.shoponline.entity.ShippingInfo;
 import com.example.shoponline.entity.UserEntity;
 import com.example.shoponline.exception.BusinessException;
 import com.example.shoponline.repository.OrderRepository;
@@ -17,15 +16,13 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
 public class OrderServiceImpl implements OrderService {
-
+    @Autowired
     private OrderRepository orderRepository;
     @Autowired
     private UserRepository userRepository;
@@ -36,8 +33,7 @@ public class OrderServiceImpl implements OrderService {
     public OrderEntity createOrder(OrderDTO orderRequest) {
         return null;
     }
-    //TODO - CHECK OUT ORDER
-    //TODO - add authentication
+    //DONE - CHECK OUT ORDER
     @Override
     public OrderEntity checkoutOrder(OrderDTO orderDto) {
         // Lấy thông tin người dùng từ cơ sở dữ liệu

@@ -1,6 +1,7 @@
 package com.example.shoponline.entity;
 
 import com.example.shoponline.customenum.OrderStatus;
+import com.example.shoponline.dto.order.ShippingInfo;
 import lombok.Getter;
 import lombok.Setter;
 

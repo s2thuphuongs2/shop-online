@@ -1,14 +1,10 @@
 package com.example.shoponline.dto.order;
 
-import com.example.shoponline.dto.ProductDTO;
-import com.example.shoponline.entity.ShippingInfo;
-import com.example.shoponline.entity.UserEntity;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Getter
 @Setter

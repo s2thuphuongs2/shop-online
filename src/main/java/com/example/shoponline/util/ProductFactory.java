@@ -41,7 +41,6 @@ public class ProductFactory {
 
 			}
 			default: {
-				// todo: add Repository
 				return productRepository;
 //				return null;
 			}
@@ -95,7 +94,7 @@ public class ProductFactory {
 		}
 	}
 
-	//TODO: thêm getPriceRange
+	//DONE: thêm getPriceRange
 	public PriceRange getPriceRange(BigDecimal price) {
 		if (price.compareTo(BigDecimal.valueOf(1)) >= 0 && price.compareTo(BigDecimal.valueOf(100)) <= 0) {
 			return PriceRange.LOW;

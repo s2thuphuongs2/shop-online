@@ -1,7 +1,6 @@
 package com.example.shoponline.controller;
 
 import com.example.shoponline.dto.api.ResponseDto;
-import com.example.shoponline.dto.order.CheckoutRequest;
 import com.example.shoponline.dto.order.OrderDTO;
 import com.example.shoponline.entity.OrderEntity;
 import com.example.shoponline.service.OrderService;

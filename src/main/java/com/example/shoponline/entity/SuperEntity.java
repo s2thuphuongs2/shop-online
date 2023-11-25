@@ -21,7 +21,7 @@ public class SuperEntity {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false)
 	private Long id;
-	@CreationTimestamp //Tụ động thêm thời gian tạo database
+	@CreationTimestamp //Tụ động thêm thời gian
 	@Column(name = "created_date")
 	private LocalDateTime createdDate;
 

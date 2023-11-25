@@ -1,4 +1,4 @@
-package com.example.shoponline.entity;
+package com.example.shoponline.dto.order;
 
 import lombok.Getter;
 import lombok.Setter;

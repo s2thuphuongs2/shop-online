@@ -82,6 +82,6 @@ public class ProductController {
 		return ResponseDto.ok(cartService.removeProductFromCart(id));
 	}
 
-	//TODO: check out the order
+	//DONE: check out the order
 
 }
