@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @MappedSuperclass
 public abstract class Product extends SuperEntity {
+    private String imageUrl;
     private String name;
     private String shortDescription;
     @Column(columnDefinition = "text")
@@ -38,8 +39,7 @@ public abstract class Product extends SuperEntity {
             } else {
                 this.priceRange = PriceRange.VERY_HIGH;
             }
-        }
-        else {
+        } else {
             this.priceRange = null;
         }
     }

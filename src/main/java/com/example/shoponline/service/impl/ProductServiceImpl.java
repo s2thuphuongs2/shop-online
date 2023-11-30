@@ -3,7 +3,6 @@ package com.example.shoponline.service.impl;
 import com.example.shoponline.customenum.Category;
 import com.example.shoponline.customenum.PriceRange;
 import com.example.shoponline.entity.Product;
-import com.example.shoponline.entity.ProductEntity;
 import com.example.shoponline.repository.ProductRepository;
 import com.example.shoponline.service.ProductService;
 import com.example.shoponline.util.ProductFactory;
@@ -13,29 +12,24 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
-	private final ProductFactory productFactory;
-	@Autowired
-	private ProductRepository productRepository;
-	@Autowired
-	private EntityManager entityManager;
+    private final ProductFactory productFactory;
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private EntityManager entityManager;
 
-	@Override
-	public List<? extends Product> getProducts(String type) {
-		Category category = Category.valueOf(type);
-		JpaRepository<? extends Product, Long> repository = productFactory.getRepository(category);
-		return repository.findAll();
-	}
+    @Override
+    public List<? extends Product> getProducts(String type) {
+        Category category = Category.valueOf(type);
+        JpaRepository<? extends Product, Long> repository = productFactory.getRepository(category);
+        return repository.findAll();
+    }
 
 //	@Override
 //	public List<? extends Product> getProductsByName(String name) {
@@ -46,16 +40,15 @@ public class ProductServiceImpl implements ProductService {
 //	}
 
 
-
-	//	@SuppressWarnings("unchecked")
-	@Override
-	public Boolean insertProduct(Object object, String type) {
-		Category category = Category.valueOf(type);
-		JpaRepository repository = productFactory.getRepository(category);
-		Product product = productFactory.getEntity(object, category);
-		repository.save(product);
-		return true;
-	}
+    //	@SuppressWarnings("unchecked")
+    @Override
+    public Boolean insertProduct(Object object, String type) {
+        Category category = Category.valueOf(type);
+        JpaRepository repository = productFactory.getRepository(category);
+        Product product = productFactory.getEntity(object, category);
+        repository.save(product);
+        return true;
+    }
 
 //	public List<Product> getProductsByName(String name) {
 //		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
@@ -70,36 +63,38 @@ public class ProductServiceImpl implements ProductService {
 //		return entityManager.createQuery(criteriaQuery).getResultList();
 //	}
 
-	//done: search by price, brand, color
-	@Override
-	public List<? extends Product> getProductsByName(String name) {
-		return productRepository.findByName(name);
-	}
+    //done: search by price, brand, color
+    @Override
+    public List<? extends Product> getProductsByName(String name) {
+        return productRepository.findByName(name);
+    }
 
-	@Override
-	public List<? extends Product> getProductsByPrice(BigDecimal price) {
-		return productRepository.findByPrice(price);
-	}
+    @Override
+    public List<? extends Product> getProductsByPrice(BigDecimal price) {
+        return productRepository.findByPrice(price);
+    }
 
-	@Override
-	public List<? extends Product> getProductsByBrand(String brand) {
-		return productRepository.findByBrand(brand);
-	}
+    @Override
+    public List<? extends Product> getProductsByBrand(String brand) {
+        return productRepository.findByBrand(brand);
+    }
 
-	@Override
-	public List<? extends Product> getProductsByColor(String color) {
-		return productRepository.findByColor(color);
-	}
+    @Override
+    public List<? extends Product> getProductsByColor(String color) {
+        return productRepository.findByColor(color);
+    }
 
-	@Override
+    @Override
 //	public List<? extends Product> getProductsByPriceRange(String priceRange) {
-	public List<? extends Product> getProductsByPriceRange(BigDecimal price) {
+    public List<? extends Product> getProductsByPriceRange(BigDecimal price) {
 //		PriceRange price = PriceRange.valueOf(priceRange);
-		PriceRange priceRange= productFactory.getPriceRange(price);
-		return productRepository.findByPriceRange(priceRange);
-	}
+        PriceRange priceRange = productFactory.getPriceRange(price);
+        return productRepository.findByPriceRange(priceRange);
+    }
 
 
-
-
+    @Override
+    public List<? extends Product> getProductsById(Iterable<Long> id) {
+        return productRepository.findAllById(id);
+    }
 }

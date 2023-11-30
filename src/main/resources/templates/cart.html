@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+
+<!-- TODO: Hiển thị danh sách sản phẩm trong giỏ hàng -->
+<h1>Cart</h1>
+
+<!-- Hiển thị tổng số lượng và tổng giá trị giỏ hàng -->
+<p>Total Items: <span th:text="${totalItems}"></span></p>
+<p>Total Price: <span th:text="${'$' + totalPrice}"></span></p>
+
+<!-- Nút để thực hiện thanh toán -->
+<a th:href="@{'/order/checkout'}" class="btn btn-success">Checkout</a>
+
+</body>
+</html>

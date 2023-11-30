@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"/>
-<!--th:replace="~{fragments/layout :: layout (~{::body},'home','Home')}"-->
-
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
 <body>
-<h1>Home</h1>
+
+<a href="/auth/login" class="btn btn-primary">Login</a>
+<a href="/auth/signup" class="btn btn-primary">Sign up</a>
+<!-- Hiển thị danh sách sản phẩm LAPTOP -->
+<h1>Laptop</h1>
+<div th:each="product : ${products}">
+    <h3 th:text="${product.name}"></h3>
+    <p th:text="${product.fullDescription}"></p>
+    <p th:text="${'$' + product.price}"></p>
+    <a th:href="@{'/product/add-to-cart/' + ${product.id}}" class="btn btn-primary">Add to Cart</a>
+    <hr>
+</div>
+<h1>Mobile</h1>
+<div th:each="product : ${mobileProducts}">
+    <h3 th:text="${product.name}"></h3>
+    <p th:text="${product.fullDescription}"></p>
+    <p th:text="${'$' + product.price}"></p>
+    <a th:href="@{'/product/add-to-cart/' + ${product.id}}" class="btn btn-primary">Add to Cart</a>
+    <hr>
+</div>
+<h1>Monitor</h1>
+<div th:each="product : ${monitorProducts}">
+    <h3 th:text="${product.name}"></h3>
+    <p th:text="${product.fullDescription}"></p>
+    <p th:text="${'$' + product.price}"></p>
+    <a th:href="@{'/product/add-to-cart/' + ${product.id}}" class="btn btn-primary">Add to Cart</a>
+    <hr>
+</div>
+
+<a href="product/get-cart" class="btn btn-primary">View Cart</a>
+
 
 </body>
-
 </html>
