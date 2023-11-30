@@ -6,6 +6,7 @@ import com.example.shoponline.dto.account.output.GetPersonalInfoOutput;
 import com.example.shoponline.dto.api.ResponseDto;
 import com.example.shoponline.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author PT
  */
 @RestController
+//	@Controller
 @RequestMapping("/account")
 public class AccountController {
 

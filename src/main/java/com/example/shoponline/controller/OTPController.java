@@ -5,6 +5,7 @@ import com.example.shoponline.dto.otp.input.VerifyOTPInput;
 import com.example.shoponline.dto.otp.output.InitOTPOutput;
 import com.example.shoponline.service.OTPService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
+@Controller
 @RequestMapping("/otp")
 @RequiredArgsConstructor
 public class OTPController {

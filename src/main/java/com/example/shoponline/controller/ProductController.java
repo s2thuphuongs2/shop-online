@@ -10,12 +10,14 @@ import com.example.shoponline.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
-@RestController
+//@RestController
+@Controller
 @RequestMapping("/product")
 @RequiredArgsConstructor
 public class ProductController {

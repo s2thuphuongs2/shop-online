@@ -10,10 +10,11 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(imports = AuthUtil.class)
 public interface UserMapper {
-	UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
+    UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-	@Mapping(target = "password", expression = "java(AuthUtil.hashPassword(input.getPassword()))")
-	UserEntity mapFromSignUpInput(SignUpInput input);
+    @Mapping(target = "password", expression = "java(AuthUtil.hashPassword(input.getPassword()))")
+    UserEntity mapFromSignUpInput(SignUpInput input);
 
-	GetPersonalInfoOutput mapToPersonalInfoOutput(UserEntity input);
+
+    GetPersonalInfoOutput mapToPersonalInfoOutput(UserEntity input);
 }
