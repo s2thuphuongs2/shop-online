@@ -115,10 +115,8 @@ Cấu trúc mã nguồn của dự án shop-online theo mô hình Maven và Spri
         mvnw spring-boot:run
         ```
         
-6. **Kiểm tra Ứng dụng:**
-    - Mở trình duyệt web và truy cập địa chỉ: **`http://localhost:8080`**.
 7. **Kiểm tra các Endpoint:**
-    - Sử dụng các công cụ như Postman hoặc cURL để thử nghiệm các endpoint như **`GET /product`**, **`POST /order`**, và các endpoint khác.
+    - Sử dụng các công cụ như Postman để thử nghiệm các endpoint như **`GET /product`**, **`POST /order`**, và các endpoint khác.
 
 ## IV. ERD
 ![image](https://github.com/s2thuphuongs2/shop-online/assets/76204441/cc9091af-4c27-48e4-8152-cc27978a9f9b)
